@@ -29,7 +29,7 @@ def index():
     if request.method == "POST":
         text = request.form.get("text")
         print(text)
-        s = TextBlob(text.sentiment)
+        s = TextBlob(text).sentiment
         return(render_template("index_1.html",result = s))
     else:
         return(render_template("index_1.html",result = "___"))
